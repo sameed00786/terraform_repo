@@ -13,8 +13,8 @@ pipeline
         			//echo "My secret text is '${secr}'"
 					withCredentials([file(credentialsId: 'jenkins', variable: 'jenkins')]) {
 						withCredentials([file(credentialsId: 'jenkins.pem', variable: 'jenkins.pem')]) {
-				//sh 'terraform init -no-color'
-				sh 'terraform destroy -auto-approve -no-color -var "accessID=$accessID" -var "secretkey=$secretkey" -var "jenkins=$jenkins" -var "jenkins.pem=$jenkins.pem"'
+				sh 'terraform init -no-color'
+				sh 'terraform apply -auto-approve -no-color -var "accessID=$accessID" -var "secretkey=$secretkey" -var "jenkins=$jenkins" -var "jenkins.pem=$jenkins.pem"'
 			}
     		}
 				}

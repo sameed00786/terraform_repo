@@ -75,7 +75,7 @@ resource "aws_instance" "amazon_linux" {
   connection {
     type        = "ssh"
     user        = "ec2-user"
-    private_key = file(var.jenkins.pem)
+    private_key = file(var.jenkins_pem)
     host        = self.public_ip
   }
   user_data = <<-EOF
@@ -92,7 +92,7 @@ resource "aws_instance" "amazon_linux" {
     connection {
       type        = "ssh"
       user        = "ec2-user"
-      private_key = file(var.jenkins.pem)
+      private_key = file(var.jenkins_pem)
       host        = self.public_ip
     }
   }
@@ -102,7 +102,7 @@ variable "jenkins" {
   type = string
   description = "this is my public key"
 }
-variable "jenkins.pem" {
+variable "jenkins_pem" {
   type = string
 }
 variable "accessID" {

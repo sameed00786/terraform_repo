@@ -67,7 +67,7 @@ resource "aws_instance" "amazon_linux" {
   ami           = "ami-08e0ca9924195beba"
   instance_type = "t2.micro"
   availability_zone = "ap-south-1a"
-  security_groups = ${aws_security_group.terraform_sg.name}
+  security_groups = ["${aws_security_group.terraform_sg.name}"]
   key_name = aws_key_pair.amazon_linux.key_name
   tags = {
     Name = "Tomcat-server"

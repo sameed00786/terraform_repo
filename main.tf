@@ -87,7 +87,7 @@ resource "aws_instance" "amazon_linux" {
   				sudo cp /tmp/springboot-hellowolrd-0.0.1-SNAPSHOT.war /usr/share/tomcat/webapps/springboot-hellowolrd-0.0.1-SNAPSHOT.war
 			EOF
   provisioner "file" {
-    source      = "/var/lib/jenkins/workspace/spring-demo/target/springboot-hellowolrd-0.0.1-SNAPSHOT.war"
+    source      = "/var/lib/jenkins/workspace/automate_java_app/target/springboot-hellowolrd-0.0.1-SNAPSHOT.war"
     destination = "/tmp/springboot-hellowolrd-0.0.1-SNAPSHOT.war"
     connection {
       type        = "ssh"

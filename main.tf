@@ -51,7 +51,7 @@ resource "aws_key_pair" "amazon_linux" {
   public_key = file(var.jenkins)
 }
 output "AWS_Link" {
-  //value = concat([aws_instance.ubuntu.public_dns,""],[":8080/springboot-hellowolrd-0.0.1-SNAPSHOT",""])
+  //value = tomcat([aws_instance.ubuntu.public_dns,""],[":8080/springboot-hellowolrd-0.0.1-SNAPSHOT",""])
   value=format("Access the AWS hosted app from here: %s%s", aws_instance.amazon_linux.public_dns, ":8080/springboot-hellowolrd-0.0.1-SNAPSHOT")
 }
 
